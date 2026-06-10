@@ -4,41 +4,45 @@ export default function AuthLeft() {
       {/* Floating decorations */}
       <div className="floating-elements">
         <span className="float-item">⚽</span>
-        <span className="float-item">🏆</span>
         <span className="float-item">⚽</span>
-        <span className="float-item">🥅</span>
         <span className="float-item">⚽</span>
-        <span className="float-item">🎽</span>
+        <span className="float-item">⚽</span>
+        <span className="float-item">⚽</span>
+        <span className="float-item">⚽</span>
         <span className="float-item">⚽</span>
       </div>
 
       <div className="left-content">
-        {/* Trophy */}
+        {/* Trophy image */}
         <div className="trophy-container">
           <div className="trophy-ring" />
           <div className="trophy-ring" />
-          <div className="trophy-emoji">🏆</div>
+          <img
+            src="/trofeo.jpg"
+            alt="Copa del Mundo"
+            className="trophy-img"
+            onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex' }}
+          />
+          {/* Fallback si no está la imagen */}
+          <div className="trophy-emoji" style={{ display: 'none' }}>🏆</div>
         </div>
 
-        {/* Brand */}
+        {/* Logo FIFA 2026 */}
+        <img
+          src="/logo2026.png"
+          alt="FIFA World Cup 2026"
+          className="fifa-logo"
+          onError={(e) => { e.target.style.display = 'none' }}
+        />
+
+        {/* Brand title */}
         <div className="brand-title">PRODE</div>
-        <div className="brand-year">MUNDIAL · 2026</div>
-        <p className="brand-tagline">
-          Predecí los resultados, acumulá puntos<br />
-          y convertite en el campeón del prode.
-        </p>
 
         {/* Flags */}
         <div className="flags-row">
           {['🇺🇸', '🇨🇦', '🇲🇽', '🇦🇷', '🇧🇷', '🇩🇪', '🇪🇸', '🇫🇷'].map((flag) => (
             <span key={flag} className="flag-chip">{flag}</span>
           ))}
-        </div>
-
-        {/* Score strip */}
-        <div className="score-strip">
-          <span className="score-badge">⭐ PLENO = 3 PTS</span>
-          <span className="score-badge">✅ TENDENCIA = 1 PT</span>
         </div>
       </div>
     </div>

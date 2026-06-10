@@ -40,7 +40,7 @@ export default function RegisterPage() {
 
     try {
       const { data } = await authService.register({
-        nombre: form.nombre,
+        username: form.nombre,
         email: form.email,
         password: form.password,
       })
@@ -60,6 +60,7 @@ export default function RegisterPage() {
       <div className="auth-divider" />
 
       <div className="auth-right">
+        <div className="auth-right-bg" />
         <div className="auth-form-wrapper">
           <div className="form-header">
             <div className="form-eyebrow">Unite al prode</div>
