@@ -12,9 +12,15 @@ api.interceptors.request.use((config) => {
   return config
 })
 
+// ── Auth ─────────────────────────────────────────────────────
 export const authService = {
   register: (data) => api.post('/auth/register', data),
   login:    (data) => api.post('/auth/login', data),
 }
+
+// ── Equipos ──────────────────────────────────────────────────
+export const getEquipos    = ()     => api.get('/equipos')
+export const createEquipo  = (data) => api.post('/equipos', data)
+export const deleteEquipo  = (id)   => api.delete(`/equipos/${id}`)
 
 export default api

@@ -3,6 +3,7 @@ import { AuthProvider, useAuth } from './AuthContext'
 import LoginPage    from './LoginPage'
 import RegisterPage from './RegisterPage'
 import HomePage     from './HomePage'
+import EquiposAdminPage from "./admin/EquiposAdminPage";
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -21,6 +22,7 @@ function AppRoutes() {
       <Route path="/login"    element={<PublicRoute><LoginPage /></PublicRoute>} />
       <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
       <Route path="/home"     element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
+      <Route path="/admin/equipos" element={<EquiposAdminPage />} />
     </Routes>
   )
 }
