@@ -43,7 +43,7 @@ export default function LoginPage() {
       }
 
       const { data } = await authService.login(payload)
-      login(data)
+      login(data.data)
       navigate('/home')
     } catch (err) {
       console.error("El error real atrapado es:", err);
