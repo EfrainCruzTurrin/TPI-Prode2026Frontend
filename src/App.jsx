@@ -4,6 +4,8 @@ import LoginPage    from './LoginPage'
 import RegisterPage from './RegisterPage'
 import HomePage     from './HomePage'
 import EquiposAdminPage from "./admin/EquiposAdminPage";
+import FechasAdminPage from "./admin/FechasAdminPage";
+import PartidosAdminPage from "./admin/PartidosAdminPage";
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -22,7 +24,9 @@ function AppRoutes() {
       <Route path="/login"    element={<PublicRoute><LoginPage /></PublicRoute>} />
       <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
       <Route path="/home"     element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
-      <Route path="/admin/equipos" element={<EquiposAdminPage />} />
+      <Route path="/admin/equipos"  element={<EquiposAdminPage />} />
+      <Route path="/admin/fechas"   element={<FechasAdminPage />} />
+      <Route path="/admin/partidos" element={<PartidosAdminPage />} />
     </Routes>
   )
 }

@@ -23,4 +23,13 @@ export const getEquipos    = ()     => api.get('/equipos')
 export const createEquipo  = (data) => api.post('/equipos', data)
 export const deleteEquipo  = (id)   => api.delete(`/equipos/${id}`)
 
+// ── Fechas (Jornadas) ────────────────────────────────────────
+export const getFechas    = ()     => api.get('/fechas')
+export const createFecha  = (data) => api.post('/fechas', data)
+
+// ── Partidos ─────────────────────────────────────────────────
+export const getPartidos    = ()        => api.get('/partidos')
+export const createPartido  = (data)    => api.post('/partidos', data)
+export const updatePartido  = (id, data) => api.patch(`/partidos/${id}`, data)
+
 export default api

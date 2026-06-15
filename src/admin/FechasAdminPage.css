@@ -1,0 +1,187 @@
+/* Fondo mundialista (idéntico al de Equipos para mantener consistencia visual) */
+.admin-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a472a 0%, #2d5a27 50%, #1a3a1a 100%);
+  padding: 24px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-logo {
+  height: 48px;
+  object-fit: contain;
+}
+
+.admin-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f0c040;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  margin: 0;
+}
+
+.btn-volver {
+  background: transparent;
+  border: 2px solid #f0c040;
+  color: #f0c040;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-volver:hover {
+  background: #f0c040;
+  color: #1a3a1a;
+}
+
+.admin-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(240, 192, 64, 0.3);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(6px);
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f0c040;
+  margin: 0 0 18px 0;
+}
+
+/* Formulario */
+.fecha-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 180px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input-field::placeholder {
+  color: rgba(255,255,255,0.45);
+}
+
+.input-field:focus {
+  border-color: #f0c040;
+}
+
+.btn-crear {
+  padding: 10px 24px;
+  background: #f0c040;
+  color: #1a3a1a;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-crear:hover:not(:disabled) {
+  background: #e0b030;
+}
+
+.btn-crear:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mensajes */
+.msg-error {
+  margin-top: 12px;
+  color: #ff7070;
+  font-size: 0.9rem;
+}
+
+.msg-success {
+  margin-top: 12px;
+  color: #70ff9a;
+  font-size: 0.9rem;
+}
+
+.msg-vacio {
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+
+/* Tabla */
+.fechas-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.fechas-tabla th {
+  text-align: left;
+  padding: 10px 14px;
+  color: #f0c040;
+  border-bottom: 2px solid rgba(240,192,64,0.4);
+  font-weight: 600;
+}
+
+.fechas-tabla td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  vertical-align: middle;
+}
+
+.fechas-tabla tr:hover td {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Badges de estado */
+.badge-estado {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-programada {
+  background: rgba(240, 192, 64, 0.15);
+  color: #f0c040;
+  border: 1px solid rgba(240, 192, 64, 0.4);
+}
+
+.badge-en_juego {
+  background: rgba(112, 255, 154, 0.15);
+  color: #70ff9a;
+  border: 1px solid rgba(112, 255, 154, 0.4);
+}
+
+.badge-finalizada {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.2);
+}

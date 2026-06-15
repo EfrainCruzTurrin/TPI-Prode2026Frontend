@@ -40,7 +40,7 @@ export default function RegisterPage() {
 
     try {
       const { data } = await authService.register({
-        username: form.email,
+        username: form.nombre,
         email: form.email,
         password: form.password,
       })

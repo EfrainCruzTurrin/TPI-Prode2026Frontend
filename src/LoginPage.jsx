@@ -36,9 +36,9 @@ export default function LoginPage() {
     setAlert(null)
 
     try {
-      // 💡 Se declara el payload traduciendo 'email' a 'username' para Spring
+
       const payload = {
-        username: form.email,
+        email: form.email,
         password: form.password
       }
 
