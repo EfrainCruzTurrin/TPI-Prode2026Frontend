@@ -5,10 +5,6 @@ export default function HomePage() {
   const { auth, logout } = useAuth()
   const navigate = useNavigate()
 
-  console.log("Auth: \n", auth)
-  console.log("USER: " + auth?.username)
-  console.log("ORL: " + auth?.rol)
-
   const handleLogout = () => {
     logout()
     navigate('/login')
