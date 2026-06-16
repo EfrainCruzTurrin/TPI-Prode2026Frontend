@@ -29,30 +29,39 @@ export default function LoginPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
     const errs = validate()
-    if (Object.keys(errs).length) { setErrors(errs); return }
+    if (Object.keys(errs).length) {
+      setErrors(errs)
+      return
+    }
 
     setLoading(true)
     setAlert(null)
 
     try {
-
       const payload = {
         email: form.email,
         password: form.password
-      })
-      
-      login(data.data);
-      navigate('/home');
+      }
 
       const { data } = await authService.login(payload)
+
       login(data.data)
       navigate('/home')
+
     } catch (err) {
-      console.error("El error real atrapado es:", err);
-      const msg = err.response?.data?.message || 'Credenciales incorrectas'
-      setAlert({ type: 'error', text: msg })
-    
+      console.error("El error real atrapado es:", err)
+
+      const msg =
+        err.response?.data?.message ||
+        'Credenciales incorrectas'
+
+      setAlert({
+        type: 'error',
+        text: msg
+      })
+
     } finally {
       setLoading(false)
     }
