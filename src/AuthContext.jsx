@@ -9,11 +9,11 @@ export function AuthProvider({ children }) {
   });
 
   const login = (userData) => {
-    localStorage.setItem('prode_user', JSON.stringify(userData))
-    localStorage.setItem('prode_token', userData.accessToken)
-    setUser(userData)
-  }
+    localStorage.setItem('prodeAuth', JSON.stringify(userData))
+    localStorage.setItem('accessToken', userData.accessToken)
 
+    setAuth(userData)
+  }
   const logout = () => {
     localStorage.removeItem('prodeAuth');
     localStorage.removeItem('accessToken');
