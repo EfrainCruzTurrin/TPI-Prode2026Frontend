@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from './AuthContext'
 
 export default function HomePage() {
-  const { user, logout } = useAuth()
+  const { auth, logout } = useAuth()
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -29,7 +29,7 @@ export default function HomePage() {
         ¡BIENVENIDO AL PRODE!
       </h1>
       <p style={{ color: '#8892a4', fontSize: '16px' }}>
-        Hola, <strong style={{ color: 'white' }}>{user?.nombre}</strong> — {user?.rol}
+        Hola, <strong style={{ color: 'white' }}>{auth?.username}</strong> — {auth?.rol}
       </p>
       <p style={{ color: '#4ade80', fontSize: '14px' }}>
         ✅ Login exitoso. Token JWT recibido correctamente.

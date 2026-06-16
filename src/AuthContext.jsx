@@ -1,12 +1,12 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useState } from 'react';
 
-const AuthContext = createContext(null)
+const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('prode_user')
-    return saved ? JSON.parse(saved) : null
-  })
+  const [auth, setAuth] = useState(() => {
+    const saved = localStorage.getItem('prodeAuth');
+    return saved ? JSON.parse(saved) : null;
+  });
 
   const login = (userData) => {
     localStorage.setItem('prode_user', JSON.stringify(userData))
@@ -15,13 +15,14 @@ export function AuthProvider({ children }) {
   }
 
   const logout = () => {
-    localStorage.removeItem('prode_user')
-    localStorage.removeItem('prode_token')
-    setUser(null)
+    localStorage.removeItem('prodeAuth');
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    setAuth(null);
   }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ auth, login, logout }}>
       {children}
     </AuthContext.Provider>
   )

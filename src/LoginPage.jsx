@@ -40,7 +40,10 @@ export default function LoginPage() {
       const payload = {
         email: form.email,
         password: form.password
-      }
+      })
+      
+      login(data.data);
+      navigate('/home');
 
       const { data } = await authService.login(payload)
       login(data.data)
@@ -49,6 +52,7 @@ export default function LoginPage() {
       console.error("El error real atrapado es:", err);
       const msg = err.response?.data?.message || 'Credenciales incorrectas'
       setAlert({ type: 'error', text: msg })
+    
     } finally {
       setLoading(false)
     }

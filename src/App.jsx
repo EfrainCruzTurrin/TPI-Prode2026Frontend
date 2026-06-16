@@ -8,13 +8,21 @@ import FechasAdminPage from "./admin/FechasAdminPage";
 import PartidosAdminPage from "./admin/PartidosAdminPage";
 
 function ProtectedRoute({ children }) {
-  const { user } = useAuth()
-  return user ? children : <Navigate to="/login" replace />
+  const token = localStorage.getItem("accessToken");
+
+  return token
+    ? children
+    : <Navigate to="/login" replace />;
 }
 
 function PublicRoute({ children }) {
-  const { user } = useAuth()
-  return !user ? children : <Navigate to="/home" replace />
+  const { auth } = useAuth();
+
+  if (auth) {
+    return <Navigate to="/home" replace />;
+  }
+
+  return children;
 }
 
 function AppRoutes() {
@@ -28,7 +36,7 @@ function AppRoutes() {
       <Route path="/admin/fechas"   element={<FechasAdminPage />} />
       <Route path="/admin/partidos" element={<PartidosAdminPage />} />
     </Routes>
-  )
+  ) 
 }
 
 export default function App() {
