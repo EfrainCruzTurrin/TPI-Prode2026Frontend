@@ -29,15 +29,37 @@ export default function HomePage() {
         ¡BIENVENIDO AL PRODE!
       </h1>
       <p style={{ color: '#8892a4', fontSize: '16px' }}>
-        Hola, <strong style={{ color: 'white' }}>{user?.nombre}</strong> — {user?.rol}
+        Hola, <strong style={{ color: 'white' }}>{user?.email}</strong>
       </p>
       <p style={{ color: '#4ade80', fontSize: '14px' }}>
         ✅ Login exitoso. Token JWT recibido correctamente.
       </p>
+
+      {/* Botón admin — solo visible si el rol es ADMIN */}
+      {user?.rol === 'ADMIN' && (
+        <button
+          onClick={() => navigate('/admin')}
+          style={{
+            marginTop: '8px',
+            padding: '12px 32px',
+            background: 'rgba(240, 192, 64, 0.15)',
+            border: '1px solid #f0c040',
+            borderRadius: '10px',
+            color: '#f0c040',
+            fontFamily: 'Barlow Condensed, sans-serif',
+            fontSize: '16px',
+            letterSpacing: '2px',
+            cursor: 'pointer',
+          }}
+        >
+          🔐 PANEL ADMINISTRADOR
+        </button>
+      )}
+
       <button
         onClick={handleLogout}
         style={{
-          marginTop: '16px',
+          marginTop: '8px',
           padding: '12px 32px',
           background: 'rgba(255,255,255,0.08)',
           border: '1px solid rgba(255,255,255,0.15)',

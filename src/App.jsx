@@ -6,6 +6,7 @@ import HomePage     from './HomePage'
 import EquiposAdminPage from "./admin/EquiposAdminPage";
 import FechasAdminPage from "./admin/FechasAdminPage";
 import PartidosAdminPage from "./admin/PartidosAdminPage";
+import AdminHomePage from "./admin/AdminHomePage";
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -27,6 +28,7 @@ function AppRoutes() {
       <Route path="/admin/equipos"  element={<EquiposAdminPage />} />
       <Route path="/admin/fechas"   element={<FechasAdminPage />} />
       <Route path="/admin/partidos" element={<PartidosAdminPage />} />
+      <Route path="/admin" element={<AdminHomePage />} />
     </Routes>
   )
 }

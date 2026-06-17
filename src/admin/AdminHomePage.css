@@ -1,0 +1,164 @@
+.admin-home {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a472a 0%, #2d5a27 50%, #1a3a1a 100%);
+  padding: 28px 32px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #fff;
+}
+
+/* Header */
+.admin-home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.admin-home-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.admin-home-logo {
+  height: 56px;
+  object-fit: contain;
+}
+
+.admin-home-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f0c040;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.admin-home-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+}
+
+.admin-home-email {
+  color: #f0c040;
+  font-weight: 600;
+}
+
+.admin-home-header-right {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.btn-ir-home {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.85);
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-ir-home:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 2px solid #ff6b6b;
+  color: #ff6b6b;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+/* Badge */
+.admin-badge {
+  display: inline-block;
+  background: rgba(240, 192, 64, 0.15);
+  border: 1px solid rgba(240, 192, 64, 0.4);
+  color: #f0c040;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+/* Grid de cards */
+.admin-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+}
+
+.admin-home-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(240, 192, 64, 0.25);
+  border-radius: 16px;
+  padding: 32px 28px;
+  cursor: pointer;
+  transition: all 0.25s;
+  backdrop-filter: blur(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.admin-home-card:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #f0c040;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.card-titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f0c040;
+  margin: 0;
+}
+
+.card-descripcion {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.card-btn {
+  margin-top: 8px;
+  background: #f0c040;
+  color: #1a3a1a;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  pointer-events: none; /* el click lo maneja la card entera */
+}
+
+.admin-home-card:hover .card-btn {
+  background: #e0b030;
+}
