@@ -8,32 +8,30 @@ import FechasAdminPage from "./admin/FechasAdminPage";
 import PartidosAdminPage from "./admin/PartidosAdminPage";
 
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem("accessToken");
+  const { auth } = useAuth();
 
-  return token
+  return auth?.accessToken
     ? children
-    : <Navigate to="/login" replace />;
+    : <Navigate to="/login" replace />;;
 }
 
 function PublicRoute({ children }) {
   const { auth } = useAuth();
 
-  if (auth) {
-    return <Navigate to="/home" replace />;
-  }
-
-  return children;
+  return auth?.accessToken
+    ? <Navigate to="/home" replace />
+    : children;
 }
 
 function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />} />
-      <Route path="/login"    element={<PublicRoute><LoginPage /></PublicRoute>} />
-      <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} />
-      <Route path="/home"     element={<ProtectedRoute><HomePage /></ProtectedRoute>} />
-      <Route path="/admin/equipos"  element={<EquiposAdminPage />} />
-      <Route path="/admin/fechas"   element={<FechasAdminPage />} />
+    <Routes> 
+      <Route path="/" element={<Navigate to="/login" replace />} /> 
+      <Route path="/login" element={<PublicRoute><LoginPage /></PublicRoute>} /> 
+      <Route path="/register" element={<PublicRoute><RegisterPage /></PublicRoute>} /> 
+      <Route path="/home" element={<ProtectedRoute><HomePage /></ProtectedRoute>} /> 
+      <Route path="/admin/equipos" element={<EquiposAdminPage />} /> 
+      <Route path="/admin/fechas" element={<FechasAdminPage />} />
       <Route path="/admin/partidos" element={<PartidosAdminPage />} />
     </Routes>
   ) 
