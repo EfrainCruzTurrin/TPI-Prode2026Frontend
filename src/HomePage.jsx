@@ -24,6 +24,13 @@ export default function HomePage() {
       textAlign: 'center',
       padding: '24px'
     }}>
+
+      <button
+        onClick={() => navigate("/pronosticos")}
+      >
+        Pronósticos
+      </button>
+
       <div style={{ fontSize: '64px' }}>🏆</div>
       <h1 style={{ fontFamily: 'Bebas Neue, sans-serif', fontSize: '48px', letterSpacing: '4px', color: '#C9A84C' }}>
         ¡BIENVENIDO AL PRODE!

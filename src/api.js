@@ -31,4 +31,7 @@ export const getPartidos    = ()        => api.get('/partidos')
 export const createPartido  = (data)    => api.post('/partidos', data)
 export const updatePartido  = (id, data) => api.patch(`/partidos/${id}`, data)
 
+// ── Pronósticos ─────────────────────────────────────────────────
+export const createPronostico = (data) => api.post("/api/pronostico", data);
+
 export default api
