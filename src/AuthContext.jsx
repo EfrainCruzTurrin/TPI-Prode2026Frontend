@@ -8,13 +8,12 @@ export function AuthProvider({ children }) {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const login = (authData) => {
-    localStorage.setItem('prodeAuth', JSON.stringify(authData));
-    localStorage.setItem('accessToken', authData.accessToken);
-    localStorage.setItem('refreshToken', authData.refreshToken);
-    setAuth(authData);
-  }
+  const login = (userData) => {
+    localStorage.setItem('prodeAuth', JSON.stringify(userData))
+    localStorage.setItem('accessToken', userData.accessToken)
 
+    setAuth(userData)
+  }
   const logout = () => {
     localStorage.removeItem('prodeAuth');
     localStorage.removeItem('accessToken');
