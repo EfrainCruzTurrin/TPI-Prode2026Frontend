@@ -48,6 +48,7 @@ export default function LoginPage() {
       const { data } = await authService.login(payload)
 
       login(data.data)
+
       navigate('/home')
 
     } catch (err) {
