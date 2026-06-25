@@ -1,0 +1,872 @@
+/* ═══════════════════════════════════════════════
+   HomePage.css — Prode Mundial 2026
+   ═══════════════════════════════════════════════ */
+
+/* ── ROOT ── */
+.hp-root {
+  min-height: 100vh;
+  background: #080c18;
+  color: #ffffff;
+  font-family: 'Barlow', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ══════════════════════════════
+   NAVBAR
+   ══════════════════════════════ */
+.hp-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 28px;
+  background: rgba(8, 12, 24, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(240, 192, 64, 0.25);
+}
+
+.hp-navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hp-navbar-logo {
+  height: 38px;
+  object-fit: contain;
+}
+
+.hp-navbar-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: #f0c040;
+}
+
+.hp-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hp-navbar-user {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* UTILIDAD PARA BOTONES CON ICONOS */
+.hp-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.hp-btn-admin {
+  padding: 7px 18px;
+  background: rgba(240, 192, 64, 0.12);
+  border: 1px solid rgba(240, 192, 64, 0.5);
+  border-radius: 8px;
+  color: #f0c040;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.hp-btn-admin:hover {
+  background: rgba(240, 192, 64, 0.25);
+  box-shadow: 0 0 12px rgba(240, 192, 64, 0.2);
+}
+
+.hp-btn-logout {
+  padding: 7px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #6b7280;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hp-btn-logout:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ══════════════════════════════
+   HERO
+   ══════════════════════════════ */
+.hp-hero {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* Fondo oscuro y la imagen que guardaste localmente */
+  background: linear-gradient(rgba(10, 15, 36, 0.85), rgba(10, 15, 36, 0.85)), 
+              url('/img/argentina-campeon.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(240, 192, 64, 0.15);
+}
+
+.hp-hero-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 50% 50%, rgba(240, 192, 64, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 40% at 20% 80%, rgba(74, 222, 128, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 40% at 80% 20%, rgba(74, 144, 226, 0.04) 0%, transparent 60%);
+}
+
+.hp-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 48px 24px 40px;
+}
+
+.hp-hero-logo {
+  width: 160px;
+  height: auto;
+  margin-bottom: 16px;
+  filter: brightness(0) invert(1);
+}
+
+.hp-hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 7vw, 80px);
+  letter-spacing: 8px;
+  color: #f0c040;
+  margin: 0 0 8px;
+  text-shadow: 0 0 60px rgba(240, 192, 64, 0.2);
+  line-height: 1;
+}
+
+.hp-hero-subtitle {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.hp-hero-hosts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.hp-host-badge {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.hp-host-sep {
+  color: rgba(240, 192, 64, 0.4);
+  font-size: 18px;
+}
+
+.hp-hero-dates {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  margin: 0 0 24px;
+}
+
+.hp-hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 14px 24px;
+  display: inline-flex;
+}
+
+.hp-hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.hp-hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: #f0c040;
+  line-height: 1;
+}
+
+.hp-hero-stat-label {
+  font-size: 11px;
+  color: #6b7280;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.hp-hero-stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ══════════════════════════════
+   3-COLUMN LAYOUT
+   ══════════════════════════════ */
+.hp-main {
+  display: grid;
+  grid-template-columns: 270px 1fr 255px;
+  flex: 1;
+}
+
+/* ══════════════════════════════
+   SIDEBARS — SHARED
+   ══════════════════════════════ */
+.hp-sidebar-left,
+.hp-sidebar-right {
+  padding: 24px 16px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.hp-sidebar-left {
+  border-right: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.hp-sidebar-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.hp-sidebar-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #f0c040;
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(240, 192, 64, 0.18);
+}
+
+/* ══════════════════════════════
+   MATCH CARDS (LEFT SIDEBAR)
+   ══════════════════════════════ */
+.hp-matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hp-match-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 11px 12px;
+  transition: border-color 0.2s;
+}
+
+.hp-match-card:hover {
+  border-color: rgba(240, 192, 64, 0.3);
+}
+
+.hp-match-live {
+  border-color: rgba(74, 222, 128, 0.4) !important;
+  background: rgba(74, 222, 128, 0.04) !important;
+}
+
+.hp-live-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #4ade80;
+  margin-bottom: 5px;
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+.hp-match-fecha {
+  font-size: 10px;
+  color: #6b7280;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.hp-match-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.hp-match-team {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.hp-team-right {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.hp-flag-img {
+  width: 24px;
+  height: 18px;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+.hp-match-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e5e7eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 72px;
+}
+
+.hp-match-score {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  color: #f0c040;
+  min-width: 36px;
+  text-align: center;
+}
+
+.hp-match-time {
+  font-size: 10px;
+  color: #6b7280;
+  margin-bottom: 7px;
+}
+
+.hp-btn-pronosticar {
+  width: 100%;
+  padding: 5px 0;
+  background: rgba(240, 192, 64, 0.08);
+  border: 1px solid rgba(240, 192, 64, 0.25);
+  border-radius: 6px;
+  color: #f0c040;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hp-btn-pronosticar:hover {
+  background: rgba(240, 192, 64, 0.18);
+  border-color: rgba(240, 192, 64, 0.5);
+}
+
+/* ══════════════════════════════
+   CENTER — MAIN CONTENT
+   ══════════════════════════════ */
+.hp-center {
+  padding: 36px 44px;
+}
+
+.hp-section {
+  margin-bottom: 60px;
+}
+
+.hp-section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  letter-spacing: 4px;
+  color: #f0c040;
+  margin: 0 0 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(240, 192, 64, 0.15);
+}
+
+.hp-section-lead {
+  font-size: 15px;
+  color: #9ca3af;
+  line-height: 1.75;
+  margin: 0 0 20px;
+}
+
+.hp-section-lead strong {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+/* RULES GRID */
+.hp-rules-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.hp-rule-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.hp-rule-card:hover {
+  border-color: rgba(240, 192, 64, 0.2);
+  transform: translateY(-2px);
+}
+
+.hp-rule-icon {
+  color: #f0c040;
+  margin-bottom: 10px;
+}
+
+.hp-rule-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #f0c040;
+  margin-bottom: 6px;
+}
+
+.hp-rule-text {
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.hp-rule-text strong {
+  color: #e5e7eb;
+}
+
+/* LEGENDS GRID */
+.hp-legends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+  gap: 14px;
+}
+
+.hp-legend-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: default;
+}
+
+.hp-legend-card:hover {
+  border-color: rgba(240, 192, 64, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.hp-legend-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.hp-legend-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s;
+}
+
+.hp-legend-card:hover .hp-legend-img {
+  transform: scale(1.06);
+}
+
+.hp-legend-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hp-legend-info {
+  padding: 11px 12px;
+}
+
+.hp-legend-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #f3f4f6;
+  margin-bottom: 2px;
+}
+
+.hp-legend-country {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.hp-legend-logro {
+  font-size: 11px;
+  color: #f0c040;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.hp-legend-goles {
+  font-size: 11px;
+  color: #4ade80;
+  font-weight: 600;
+}
+
+/* VENUES GRID */
+.hp-venues-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.hp-venue-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.hp-venue-card:hover {
+  border-color: rgba(74, 222, 128, 0.25);
+  transform: translateY(-2px);
+}
+
+.hp-venue-country {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.hp-venue-stadium {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: #f0c040;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.hp-venue-city {
+  font-size: 12px;
+  color: #d1d5db;
+  margin-bottom: 6px;
+}
+
+.hp-venue-cap {
+  font-size: 11px;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.hp-venue-note {
+  font-size: 11px;
+  color: #4ade80;
+  font-style: italic;
+}
+
+/* ══════════════════════════════
+   RIGHT SIDEBAR (PREMIOS, RANKING, BALON)
+   ══════════════════════════════ */
+
+/* PRIZES */
+.hp-prizes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.hp-prize-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 13px;
+}
+
+.hp-prize-pos {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.hp-prize-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.hp-prize-detail {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+/* BALL CARD */
+.hp-ball-card {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hp-ball-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.hp-ball-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.hp-ball-title {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #f0c040;
+  letter-spacing: 1px;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+/* LEADERBOARD */
+.hp-leaderboard {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.hp-leaderboard-hint {
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 10px;
+}
+
+.hp-leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-bottom: 12px;
+}
+
+.hp-lb-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 13px;
+}
+
+.hp-lb-pos {
+  color: rgba(255, 255, 255, 0.65);
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 1px;
+}
+
+.hp-lb-pts {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.hp-btn-ranking {
+  width: 100%;
+  padding: 8px;
+  background: rgba(240, 192, 64, 0.08);
+  border: 1px solid rgba(240, 192, 64, 0.25);
+  border-radius: 7px;
+  color: #f0c040;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.hp-btn-ranking:hover {
+  background: rgba(240, 192, 64, 0.18);
+}
+
+/* FACTS */
+.hp-sidebar-facts {
+  margin-top: 24px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.hp-facts-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #f0c040;
+  margin: 0 0 10px;
+}
+
+.hp-facts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hp-facts-list li {
+  font-size: 12px;
+  color: #9ca3af;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hp-facts-list li::before {
+  content: '▸';
+  color: #f0c040;
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+/* QUOTE */
+.hp-sidebar-quote {
+  margin-top: 20px;
+  padding: 14px;
+  border-left: 3px solid rgba(240, 192, 64, 0.4);
+  background: rgba(240, 192, 64, 0.03);
+  border-radius: 0 8px 8px 0;
+}
+
+.hp-sidebar-quote p {
+  font-size: 12px;
+  color: #9ca3af;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0 0 6px;
+}
+
+.hp-sidebar-quote span {
+  font-size: 11px;
+  color: #f0c040;
+  font-weight: 600;
+}
+
+/* ══════════════════════════════
+   FOOTER
+   ══════════════════════════════ */
+.hp-footer {
+  background: rgba(0, 0, 0, 0.35);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 14px 28px;
+}
+
+.hp-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+/* ══════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════ */
+@media (max-width: 1200px) {
+  .hp-main {
+    grid-template-columns: 250px 1fr;
+  }
+  .hp-sidebar-right {
+    display: none;
+  }
+  .hp-center {
+    padding: 28px 32px;
+  }
+  .hp-venues-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .hp-main {
+    grid-template-columns: 1fr;
+  }
+  .hp-sidebar-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+  }
+  .hp-matches-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hp-center {
+    padding: 24px 20px;
+  }
+  .hp-rules-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hp-navbar-title {
+    display: none;
+  }
+  .hp-hero-stats {
+    gap: 0;
+    padding: 10px 12px;
+  }
+  .hp-hero-stat {
+    padding: 0 12px;
+  }
+  .hp-hero-stat-num {
+    font-size: 24px;
+  }
+  .hp-matches-list {
+    grid-template-columns: 1fr;
+  }
+  .hp-legends-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hp-venues-grid {
+    grid-template-columns: 1fr;
+  }
+  .hp-footer-inner {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}
